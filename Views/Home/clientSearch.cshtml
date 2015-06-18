@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#search").on("click", function () {
+            var n = $('#name').val();
+           $.getJSON("/Home/search?s_tour="+n, function (item) {
+               //alert(d[0].Doc_name);
+               $("#t1 tr").remove();
+               $.each(item, function (i, d) {
+
+                    $('#t1').append('<tr><td>' + d.name + '</td><td>&nbsp;&nbsp;&nbsp;</td><td>' +
+                        d.st_date + '</td><td>&nbsp;&nbsp;&nbsp;</td><td>' + d.end_date + '</td><td>&nbsp;&nbsp;&nbsp;</td><td>' +
+                        d.price + '</td><td>&nbsp;&nbsp;&nbsp;</td><td>' + d.places + '</td></tr>');
+                });
+                //}
+                //$("#t1").append("<tr> <td>" + d[i].Doc_name + "</td> <td>" + d[i].Doc_email + "</td> <td>"
+                //    + d[i].Doc_phone + "</td> <td>" + d[i].Doc_category + "</td>");
+
+
+            });
+        });
+    });
+    </script>
+
+
+
+</head>
+<body id="page2">
+    <!-- content -->
+    <section id="content">
+        <article class="col1">
+            <h3>Hot Travel</h3>
+            <div class="pad">
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img1.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>K2 </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img2.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Gasherbrum III </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper">
+                    <figure class="left marg_right1"><img src="~/images/page1_img3.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Nanga Parbat </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+            </div>
+        </article>
+        <article class="col2 pad_left1">
+
+            <h2 align="center">Search Tour</h2>
+            <div align="center">
+                <div class="wrapper" align="left"><input type="text" name="tour_name" id="name" placeholder="Enter Tour Name..." /></div>
+                <div align="right"><input type="button" value="Search" id="search" class="button" /></div>
+            </div>
+
+            
+            <br /><br /><br />
+            <div align="center">
+                <div>
+
+                    <table >
+                        <tr>
+                            <td><b>Name</b></td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td><b>Start Date</b></td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td><b>End Date</b></td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td><b>Price</b></td>
+                            <td>&nbsp;&nbsp;&nbsp;</td>
+                            <td><b>Places</b></td>
+                        </tr>
+                    </table>
+                    </div>
+                <div>
+                    <table cellpadding="3" border="1" id="t1">
+                        
+
+                    </table>
+
+                   
+
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- / content -->
+</body>
+</html>1

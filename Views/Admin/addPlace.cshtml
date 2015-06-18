@@ -1,0 +1,49 @@
+﻿@model Omar_EAD_Term_Project.Models.place
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ADD PLACE</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+
+</head>
+<body id="page2">
+    <!-- content -->
+    <section id="content">
+        <article class="col1">
+            <h3>Hot Travel</h3>
+            <div class="pad">
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img1.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>K2 </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img2.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Gasherbrum III </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper">
+                    <figure class="left marg_right1"><img src="~/images/page1_img3.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Nanga Parbat </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+            </div>
+        </article>
+        <article class="col2 pad_left1">
+
+            <h2>Registration Form</h2>
+
+            <form id="ContactForm" method="post" action="/admin/enterPlace">
+                <div>
+                    <div class="wrapper"><input type="text" class="input" name="p.name" >Name:<br /></div>
+                    <input type="submit" value="Add" class="button" />
+                </div>
+            </form>
+        </article>
+    </section>
+    <!-- / content -->
+</body>
+</html>

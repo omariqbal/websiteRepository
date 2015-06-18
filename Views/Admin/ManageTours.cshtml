@@ -1,0 +1,73 @@
+﻿@model List<Omar_EAD_Term_Project.Models.tourPlacesClass>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TOURS MANAGEMENT</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+</head>
+
+<body id="page2">
+    <!-- content -->
+    <section id="content">
+
+
+        <h2 align="center">Tours Panel</h2>
+        <table cellpadding="5" border="1">
+            <tr>
+                <td><b>Name</b></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><b>Start Date</b></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><b>End Date</b></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><b>Price</b></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><b>Places</b></td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            @if (Model != null)
+            {
+                foreach (var clt in Model)
+                {
+                    <tr>
+                        <td>@clt.t.name</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>@clt.t.st_date </td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>@clt.t.end_date</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>@clt.t.price</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>@for (int i = 0; i < clt.list.Count;i++ )
+                            {
+                                @(clt.list[i].name);
+                            if(i!=clt.list.Count-1)
+                            { 
+                                <br />
+                            }
+                            }
+                         </td>
+                        
+                        <td>&nbsp;</td>
+                        <td><a href="/admin/editTour/@clt.t.Id" class="button">Edit</a></td>
+                        <td>&nbsp;</td>
+                        <td><a href="/admin/removeTour/@clt.t.Id" class="button">Remove</a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                }
+            }
+        </table>
+        <br /><br /><br />
+        <div align="center"><a href="/admin/addTour" class="button">Add </a></div>
+
+    </section>
+    <!-- / content -->
+</body>
+
+</html>

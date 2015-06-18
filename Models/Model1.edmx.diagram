@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11ae6dea2308458ab7f39bd07410e7ff" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.admin" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.admin_user" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.client" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.client_user" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.place" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tour" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tour_places" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_admin_user_admin" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_client_tour" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_client_user_client" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_tour_places_place" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_tour_places_tour" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_tour_tour_places" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

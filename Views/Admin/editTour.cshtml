@@ -1,0 +1,75 @@
+﻿@model Omar_EAD_Term_Project.Models.placesClass
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ADD TOUR</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+
+</head>
+<body id="page2">
+    <!-- content -->
+    <section id="content">
+        <article class="col1">
+            <h3>Hot Travel</h3>
+            <div class="pad">
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img1.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>K2 </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img2.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Gasherbrum III </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper">
+                    <figure class="left marg_right1"><img src="~/images/page1_img3.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Nanga Parbat </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+            </div>
+        </article>
+        <article class="col2 pad_left1">
+
+            <h2>Edit Tour</h2>
+
+            <form id="ContactForm" method="post" action="/admin/changeTour/@Session["tour_id"]">
+                <div>
+                    <div class="wrapper"><input type="text" class="input" name="name" value=@Session["name"]>Name:<br /></div>
+                    <div class="wrapper">Start Date: <input type="date" class="input" name="st_date" value=@Session["st_date"] placeholder="Start Date" required="required"></div>
+                    <div class="wrapper">End Date: <input type="date" class="input" name="end_date" value=@Session["end_date"] placeholder="End Date" required="required"></div>
+                    <div class="wrapper"><input type="text" class="input" name="price" value=@Session["price"]>Charges:<br /></div>
+                    <table align="center">
+                        <tr><td><br /></td></tr>
+                        <tr>
+                                <td style="font-size:large"><b>Places</b></td>
+                        </tr>
+                        @for (int i = 0; i < Model.allPlaces.Count ; i++)
+                        {
+                            <tr>
+                                @if (Model.myPlaces.IndexOf(Model.allPlaces[i].Id) == -1)
+                                {
+                                    <td><input type="checkbox" name=@Model.allPlaces[i].Id /> </td>
+                                }
+                                else
+                                {
+                                    <td><input type="checkbox" name=@Model.allPlaces[i].Id checked/> </td>
+                                }
+                                
+                                <td>&nbsp;</td>
+                                <td>@Model.allPlaces[i].name</td>
+                            </tr>
+                        }
+                    </table>
+                    <div align="center"><input type="submit" value="Edit" class="button" /></div>
+                </div>
+            </form>
+        </article>
+    </section>
+    <!-- / content -->
+</body>
+</html>

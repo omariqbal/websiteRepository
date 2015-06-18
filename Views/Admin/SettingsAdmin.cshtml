@@ -1,0 +1,57 @@
+﻿@model Omar_EAD_Term_Project.Models.adminData
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Client Settings</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+
+</head>
+<body id="page2">
+    <!-- content -->
+    <section id="content">
+        <article class="col1">
+            <h3>Hot Travel</h3>
+            <div class="pad">
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img1.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>K2 </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img2.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Gasherbrum III </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper">
+                    <figure class="left marg_right1"><img src="~/images/page1_img3.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Nanga Parbat </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+            </div>
+        </article>
+        <article class="col2 pad_left1">
+
+            <h2 align="center">ADMIN SETTINGS</h2>
+            
+            @using (Html.BeginForm("editAdmin","admin",FormMethod.Post))
+            { 
+                <div>
+                    <b>@Html.Label("MyName:")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>@Html.TextBoxFor(x => x.a.name)
+                    <br /><br /><b>@Html.Label("Adress:")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>@Html.TextBoxFor(x => x.a.address)
+                    <br /><br /><b>@Html.Label("Email:")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>@Html.TextBoxFor(x => x.a.email)
+                    <br /><br /><b>@Html.Label("Phone #:")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>@Html.TextBoxFor(x => x.a.phno)
+                    <br /><br /><b>@Html.Label("Password:")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>@Html.TextBoxFor(x => x.u.pwd)
+                    
+                    <br /><br />
+                    <div align="center"><input type="submit" value="Edit" class="button" /></div>
+                </div>
+            }
+                
+               </article>
+    </section>
+    <!-- / content -->
+</body>
+</html>

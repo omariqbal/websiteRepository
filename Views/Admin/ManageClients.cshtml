@@ -1,0 +1,67 @@
+﻿@model List<Omar_EAD_Term_Project.Models.dataClass>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+</head>
+
+    <body id="page2">
+        <!-- content -->
+        <section id="content">
+        
+        
+                <h2 align="center">Admin Panel</h2>
+            <table cellpadding="5" border="1">
+                    <tr>
+                        <td><b>Name</b></td>
+                        <td>&nbsp;</td>
+                        <td><b>Phone # </b></td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td><b>Email</b></td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td><b>Address</b></td>
+                        <td>&nbsp;</td>
+                        <td><b>Username</b></td>
+                        <td>&nbsp;</td>
+                        <td><b>Password</b></td>
+                    </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                    @if(Model!=null)
+                    { 
+                        foreach (var clt in Model)
+                        {
+                            <tr>
+                                <td>@clt.c.name </td>
+                                <td>&nbsp;</td>
+                                <td>@clt.c.phno</td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td>@clt.c.email</td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td>@clt.c.address</td>
+                                <td>&nbsp;</td>
+                                <td>@clt.u.username</td>
+                                <td>&nbsp;</td>
+                                <td>@clt.u.pwd</td>
+                                <td>&nbsp;</td>
+                                <td><a href="/admin/editClient/@clt.u.Id" class="button">Edit</a></td>
+                                <td>&nbsp;</td>
+                                <td><a href="/admin/doWork/@clt.u.Id" class="button">Remove </a></td>
+                            </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        }
+                    }
+                </table>
+        <br /><br /><br />
+           <div align="center" ><a  href="/admin/addClient" class="button">Add </a></div>
+
+        </section>
+        <!-- / content -->
+    </body>
+
+</html>

@@ -1,0 +1,49 @@
+﻿@model List<Omar_EAD_Term_Project.Models.place>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+</head>
+
+<body id="page2">
+    <!-- content -->
+    <section id="content">
+
+
+        <h2 align="center">PLACES MANAGEMENT</h2>
+        
+        <table align="center" cellpadding="5" border="1">
+            <tr>
+                <td><b>Name</b></td>
+                
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            @if (Model != null)
+            {
+                foreach (var clt in Model)
+                {
+                    <tr>
+                        <td>@clt.name </td>
+                        <td>&nbsp;</td>
+                        <td><a href="/admin/editPlace/@clt.Id" class="button">Edit</a></td>
+                        <td>&nbsp;</td>
+                        <td><a href="/admin/removePlace/@clt.Id" class="button">Remove </a></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                }
+            }
+        </table>
+        <br /><br /><br />
+        <div align="center"><a href="/admin/addPlace" class="button">Add </a></div>
+
+    </section>
+    <!-- / content -->
+</body>
+
+</html>

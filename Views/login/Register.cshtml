@@ -1,0 +1,89 @@
+﻿@model Omar_EAD_Term_Project.Models.client_user
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        $(document).ready(function () {
+
+            $('#checking').hide();
+            $('#registerbtn').hide();
+
+            $('#UserName').focusout(function () {
+
+                var userName = $('#UserName').val();
+                $('#checking').show();
+                $.getJSON("/login/CheckUserName?UserName=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("User already exists in database");
+                        $('#registerbtn').hide();
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                        $('#registerbtn').show();
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+</head>
+<body id="page2">
+    <!-- content -->
+    <section id="content">
+        <article class="col1">
+            <h3>Hot Travel</h3>
+            <div class="pad">
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img1.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>K2 </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img2.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Gasherbrum III </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper">
+                    <figure class="left marg_right1"><img src="~/images/page1_img3.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Nanga Parbat </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+            </div>
+        </article>
+        <article class="col2 pad_left1">
+            
+            <h2>Registration Form</h2>
+            
+
+            <form id="ContactForm" method="post" action="/login/RegisterClient">
+                <div>
+                    <div class="wrapper"><input type="text" class="input" id="UserName" name="UserName">Username:<br /></div><div id="checking">Checking...</div>
+                    <div  id="result"></div>
+                    <div class="wrapper"><input type="text" class="input" name="c.name">Name:<br /></div>
+                    <div class="wrapper"><input type="text" class="input " name="c.email">E-mail:<br /></div>
+                    <div class="wrapper"><input type="text" class="input" name="c.address">Address:<br /></div>
+                    <div class="wrapper"><input type="text" class="input" name="c.phno">Phone #:<br /></div>
+                    <div class="wrapper"><input type="password" class="input" name="u.pwd">Password:<br /></div>
+                    
+                    <a href="#" class="button" onclick="document.getElementById('ContactForm').reset()">clear</a>
+                    <input type="submit" id="registerbtn" value="Register" class="button" />
+                </div>
+            </form>
+        </article>
+    </section>
+    <!-- / content -->
+</body>
+</html>

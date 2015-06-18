@@ -1,0 +1,66 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <script type="text/javascript" src="js/Myriad_Pro_600.font.js"></script>
+
+</head>
+<body id="page2">
+    <!-- content -->
+    <section id="content">
+        <article class="col1">
+            <h3>Hot Travel</h3>
+            <div class="pad">
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img1.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>K2 </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper under">
+                    <figure class="left marg_right1"><img src="~/images/page1_img2.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Gasherbrum III </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+                <div class="wrapper">
+                    <figure class="left marg_right1"><img src="~/images/page1_img3.jpg" alt=""></figure>
+                    <p class="pad_bot2"><strong>Nanga Parbat </strong></p>
+                    <p class="pad_bot2">One of the most beautifull place in Pakistan</p>
+                    <a href="#" class="marker_1"></a>
+                </div>
+            </div>
+        </article>
+        <script>
+            function f1()
+            {
+                var v = document.getElementById('head1');
+                var v2 = "Invalid Username or Password";
+                v.textContent=v2;
+            }
+            function f2()
+            {
+                document.getElementById('ContactForm').reset()
+                var v = document.getElementById('head1');
+                var v2 = "";
+                v.textContent = v2;
+
+            }
+        </script>
+        <article class="col2 pad_left1">
+            <h2>Login</h2>
+            <h3 id="head1"></h3>
+            <form id="ContactForm" action="/login/LoginCheck" method="post">
+                <div>
+                    <div class="wrapper"><input type="text" class="input" name="u.username">Username:<br /></div>
+                    <div class="wrapper"><input type="password" class="input" name="u.pwd">Password:<br /></div>
+                    <a href="#" class="button" onclick="f2">clear</a>
+                    <input type="submit" value="Login" class="button" onclick="f1" />
+                </div>
+            </form>
+        </article>
+    </section>
+    <!-- / content -->
+</body>
+</html>
